@@ -4,137 +4,73 @@ body{
 }
 
 .sidebar {
-    height: 660px;
+    height: 100%;
     width: 100px;
     border-radius: 5px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
     background-color: #506558;
 }
 
-header {
+.sidebar .header {
+    display: flex;
+    padding: 30px 10px 30px 10px;
     background-color: #39533F;
-    padding-top: 15px;
-    padding-bottom: 15px;
 }
 
-.sidebar .image-text img {
-    width: 80px;
-    padding-left: 5%;
-    border-radius: 6px;
-}
-
-.sidebar .image-text {
-    padding: 10px;
+.sidebar .image-logo img {
+    width: 100%;
 }
 
 .menu {
-    padding-top: 20%;
-    padding-left: 32%;
-    padding-right: 15px;
+    /* background-color: aqua; */
+    width: 70%;
+    /* padding-left: 10%;
+    padding-right: 10%; */
 }
 
-.menu .image-search {
-    /* margin-top: 15px; */
-    margin-bottom: 15px;
+.menu ul {
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 100%; */
+    /* padding-left: 15px;
+    padding-right: 15px; */
+    /* margin-left: 15px; */
+    /* margin: 10px; */
+    /* width: 60px; */
 }
-.menu .image-search img {
-    width: 40px;
+.menu ul li {
+    border-bottom: 2px solid red;
+    padding: 1px 1px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* margin-left: -5px;
+    margin-right: -5px; */
+    margin-bottom: 35px;
+    list-style: none;
+    width: 100%;
+}
+
+
+/* .menu ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} */
+
+/* .sidebar .image-text img {
+    width: 100px;
     border-radius: 6px;
-}
+} */
 
-.menu .image-geoespectral {
-    margin-top: 20px;
-    margin-bottom: 15px;
-}
 
-.menu .image-geoespectral img {
+.menu .image-icon img {
     width: 40px;
-    border-radius: 6px;
-}
-
-.menu .image-geoespectral {
-    margin-bottom: 15px;
-}
-.menu .image-geoespectral img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-/* icono poligono */
-.menu .image-poligono {
-    margin-bottom: 15px;
-}
-
-.menu .image-poligono img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-.menu .image-poligono {
-    /* padding: 10px; */
-    margin-bottom: 15px;
-}
-.menu .image-poligono img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-/* icono finca */
-.menu .image-finca {
-    /* padding: 10px; */
-    margin-bottom: 15px;
-}
-
-.menu .image-finca img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-.menu .image-finca {
-    /* padding: 10px; */
-    margin-bottom: 15px;
-}
-.menu .image-finca img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-/* icono labor */
-.menu .image-labor {
-    /* padding: 10px; */
-    margin-bottom: 15px;
-}
-
-.menu .image-labor img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-.menu .image-labor {
-    /* padding: 10px; */
-    margin-bottom: 15px;
-}
-.menu .image-labor img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-/* icono informes */
-.menu .image-informes {
-    /* padding: 10px; */
-    margin-bottom: 15px;
-}
-
-.menu .image-informes img {
-    width: 40px;
-    border-radius: 6px;
-}
-
-.menu .image-informes {
-    /* padding: 10px; */
-    margin-bottom: 15px;
-}
-.menu .image-informes img {
-    width: 40px;
-    border-radius: 6px;
+    /* border-radius: 6px; */
 }
