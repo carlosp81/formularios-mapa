@@ -37,40 +37,26 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* width: 100%; */
-    /* padding-left: 15px;
-    padding-right: 15px; */
-    /* margin-left: 15px; */
-    /* margin: 10px; */
-    /* width: 60px; */
 }
+
 .menu ul li {
     border-bottom: 2px solid red;
-    padding: 1px 1px 20px 0;
+    padding: 1px 1px 10px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* margin-left: -5px;
-    margin-right: -5px; */
     margin-bottom: 35px;
     list-style: none;
     width: 100%;
 }
 
+.menu ul li img {
+    width: 70%;
+    padding-left: 18%;
+    padding-right: 15%;
+}
 
-/* .menu ul li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-} */
-
-/* .sidebar .image-text img {
-    width: 100px;
+/* .menu .image-icon img {
+    width: 40px;
     border-radius: 6px;
 } */
-
-
-.menu .image-icon img {
-    width: 40px;
-    /* border-radius: 6px; */
-}
