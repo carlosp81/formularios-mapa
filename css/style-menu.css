@@ -1,0 +1,140 @@
+body{
+    font-family: "lato";
+    height: 100%;
+}
+
+.sidebar {
+    height: 660px;
+    width: 100px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #506558;
+}
+
+header {
+    background-color: #39533F;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.sidebar .image-text img {
+    width: 80px;
+    padding-left: 5%;
+    border-radius: 6px;
+}
+
+.sidebar .image-text {
+    padding: 10px;
+}
+
+.menu {
+    padding-top: 20%;
+    padding-left: 32%;
+    padding-right: 15px;
+}
+
+.menu .image-search {
+    /* margin-top: 15px; */
+    margin-bottom: 15px;
+}
+.menu .image-search img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.menu .image-geoespectral {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.menu .image-geoespectral img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.menu .image-geoespectral {
+    margin-bottom: 15px;
+}
+.menu .image-geoespectral img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+/* icono poligono */
+.menu .image-poligono {
+    margin-bottom: 15px;
+}
+
+.menu .image-poligono img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.menu .image-poligono {
+    /* padding: 10px; */
+    margin-bottom: 15px;
+}
+.menu .image-poligono img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+/* icono finca */
+.menu .image-finca {
+    /* padding: 10px; */
+    margin-bottom: 15px;
+}
+
+.menu .image-finca img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.menu .image-finca {
+    /* padding: 10px; */
+    margin-bottom: 15px;
+}
+.menu .image-finca img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+/* icono labor */
+.menu .image-labor {
+    /* padding: 10px; */
+    margin-bottom: 15px;
+}
+
+.menu .image-labor img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.menu .image-labor {
+    /* padding: 10px; */
+    margin-bottom: 15px;
+}
+.menu .image-labor img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+/* icono informes */
+.menu .image-informes {
+    /* padding: 10px; */
+    margin-bottom: 15px;
+}
+
+.menu .image-informes img {
+    width: 40px;
+    border-radius: 6px;
+}
+
+.menu .image-informes {
+    /* padding: 10px; */
+    margin-bottom: 15px;
+}
+.menu .image-informes img {
+    width: 40px;
+    border-radius: 6px;
+}
