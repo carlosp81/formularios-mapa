@@ -10,12 +10,15 @@
     <nav class="sidebar">
         <section class="header">
             <div class="image-logo">
-                <span class="image-icon">
-                    <img src="./Iconos/agroespectral_blanco.png" alt="logo agroespectral">
-                </span>
+                <input class="tgl tgl-light" id="cb1" type="checkbox"/>
+                <label class="tgl-btn" for="cb1">
+                    <span>
+                        <img src="./Iconos/agroespectral_blanco.png" alt="logo agroespectral">
+                    </span>
+                </label>    
             </div>
         </section>
-        <section class="menu">
+        <section class="menu tgl-btn tgl-light">
             <ul>
                 <li>
                     <a href="#">
@@ -60,37 +63,85 @@
                     </a>
                 </li>
             </ul>
-            <!-- <div class="image-search">
-                <span class="image-search">
-                    <img src="./Iconos/buscar.png" alt="icono busqueda">
-                </span>
-            </div> -->
-            <!-- <div class="image-geoespectral">
-                <span class="image-geoespectral">
-                    <img src="./Iconos/palma.png" alt="icono geoespectral">
-                </span>
-            </div> -->
-            <!-- <div class="image-poligono">
-                <span class="image-poligono">
-                    <img src="./Iconos/poligono.png" alt="icono poligono">
-                </span>
-            </div> -->
-            <!-- <div class="image-finca">
-                <span class="image-finca">
-                    <img src="./Iconos/finca.png" alt="icono finca">
-                </span>
-            </div> -->
-            <!-- <div class="image-labor">
-                <span class="image-labor">
-                    <img src="./Iconos/labor.png" alt="icono labor">
-                </span>
-            </div>
-            <div class="image-informes">
-                <span class="image-informes">
-                    <img src="./Iconos/informes.png" alt="icono informes">
-                </span>
-            </div> -->
         </section>
     </nav>
+    <div class="form-box">
+        <section class="form-header">
+            <ul>
+                <li class="form-header__icon">
+                    <a href="http://">
+                        <img src="./Iconos/icon_agro.ico" alt="icono agro">
+                    </a>
+                </li>
+                <li class="form-header__search">Busqueda</li>
+                <li></li>
+            </ul>
+        </section>
+        <section class="options-body">
+            <ul>
+                <li>
+                    <select name="choice">
+                        <option value="lote" selected>Lote</option>
+                        <option value="second">Second Value</option>
+                        <option value="third">Third Value</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="choice">
+                        <option value="finca" selected>Finca</option>
+                        <option value="first">First Value</option>
+                        <option value="second">Second Value</option>
+                        <option value="third">Third Value</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="choice">
+                        <option value="first" selected>Numero de Lote</option>
+                        <option value="second">Second Value</option>
+                        <option value="third">Third Value</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <div class="form-box">
+        <section class="form-header">
+            <ul>
+                <li class="form-header__icon">
+                    <a href="http://">
+                        <img src="./Iconos/icon_agro.ico" alt="icono agro">
+                    </a>
+                </li>
+                <li class="form-header__search">GeoData</li>
+                <li class="form-header__cross"></li>
+            </ul>
+        </section>
+        <section class="options-body">
+            <ul>
+                <li>
+                    <select name="choice">
+                        <option value="lote" selected>Lote</option>
+                        <option value="second">Second Value</option>
+                        <option value="third">Third Value</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="choice">
+                        <option value="finca" selected>Finca</option>
+                        <option value="first">First Value</option>
+                        <option value="second">Second Value</option>
+                        <option value="third">Third Value</option>
+                    </select>
+                </li>
+                <li>
+                    <select name="choice">
+                        <option value="first" selected>First Value</option>
+                        <option value="second">Second Value</option>
+                        <option value="third">Third Value</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+    </div>
  </body>
  </html>
