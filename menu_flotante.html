@@ -65,7 +65,7 @@
             </ul>
         </section>
     </nav>
-    <div class="form-box">
+    <div class="form-box form-box-busqueda">
         <section class="form-header">
             <ul>
                 <li class="form-header__icon">
@@ -74,7 +74,7 @@
                     </a>
                 </li>
                 <li class="form-header__search">Busqueda</li>
-                <li></li>
+                <li class="form-header__cross form-header__cross-search"></li>
             </ul>
         </section>
         <section class="options-body">
@@ -104,41 +104,35 @@
             </ul>
         </section>
     </div>
-    <div class="form-box">
-        <section class="form-header">
+    <div class="form-box form-box-geodata">
+        <section class="form-header" id="geodata-header">
             <ul>
                 <li class="form-header__icon">
                     <a href="http://">
-                        <img src="./Iconos/icon_agro.ico" alt="icono agro">
+                        <img src="./Iconos/palma.png" alt="icono agro">
                     </a>
                 </li>
                 <li class="form-header__search">GeoData</li>
-                <li class="form-header__cross"></li>
+                <li class="form-header__cross form-header__cross-geodata"></li>
             </ul>
         </section>
         <section class="options-body">
             <ul>
-                <li>
-                    <select name="choice">
-                        <option value="lote" selected>Lote</option>
-                        <option value="second">Second Value</option>
-                        <option value="third">Third Value</option>
-                    </select>
+                <li class="form-box__options-body__field">
+                    <label for="clima">Clima</label>
+                    <input type="checkbox" name="clima" id="field-box">
                 </li>
-                <li>
-                    <select name="choice">
-                        <option value="finca" selected>Finca</option>
-                        <option value="first">First Value</option>
-                        <option value="second">Second Value</option>
-                        <option value="third">Third Value</option>
-                    </select>
+                <li class="form-box__options-body__field">
+                    <label for="pc">Palma</label>
+                    <input type="checkbox" name="palma" id="field-box">
                 </li>
-                <li>
-                    <select name="choice">
-                        <option value="first" selected>First Value</option>
-                        <option value="second">Second Value</option>
-                        <option value="third">Third Value</option>
-                    </select>
+                <li class="form-box__options-body__field">
+                    <label for="pc">PC</label>
+                    <input type="checkbox" name="pc" id="field-box">
+                </li>
+                <li class="form-box__options-body__field">
+                    <label for="multiespectral">Multiespectral</label>
+                    <input type="checkbox" name="multiespectral" id="field-box">
                 </li>
             </ul>
         </section>
