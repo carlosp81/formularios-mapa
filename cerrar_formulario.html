@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/cerrar-formulario.css" rel="stylesheet" type="text/css" />
+    <script src="./script/close_form.js" defer></script>
+    <title>cerrar Formulario</title>
+ </head>
+ <body>
+    <div class="container">
+        <div class="form-box form-box-geodata" >
+            <section class="form-header">
+                <ul>
+                    <li class="form-header__icon">
+                        <a href="http://">
+                            <img src="./Iconos/palma.png" alt="icono agro">
+                        </a>
+                    </li>
+                    <li class="form-header__search">GeoData</li>
+                    <li class="form-header__close_form" >
+                        <input type="checkbox" name="close" id="close-form" onclick="closeForm()">
+                    </li>
+                </ul>
+            </section>
+            <section class="form-body">
+                <form action="" method="post">
+                    <ul>
+                        <li class="form-box__options-body__field">
+                            <label for="clima">Clima</label>
+                            <input type="checkbox" name="clima" id="field-box">
+                        </li>
+                        <li class="form-box__options-body__field">
+                            <label for="pc">Palma</label>
+                            <input type="checkbox" name="palma" id="field-box">
+                        </li>
+                        <li class="form-box__options-body__field">
+                            <label for="pc">PC</label>
+                            <input type="checkbox" name="pc" id="field-box">
+                        </li>
+                        <li class="form-box__options-body__field">
+                            <label for="multiespectral">Multiespectral</label>
+                            <input type="checkbox" name="multiespectral" id="field-box">
+                        </li>
+                    </ul>
+                </form>
+            </section>
+         </div>
+    </div>
+ </body>
+ </html>
