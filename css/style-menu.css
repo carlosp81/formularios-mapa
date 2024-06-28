@@ -196,7 +196,7 @@ input:checked .menu {
     list-style: none;
 }
 
-.form-box .form-header {
+.form-header {
     height: 70px;
     background-color: #CD6D0D;
     border-radius: 20px 20px 0px 0px;
@@ -282,6 +282,30 @@ input:checked .menu {
 
 .form-header__cross-geodata {
     background-color: #213526;
+}
+
+.close_form input[type="checkbox"] {
+    appearance: none;
+    background-color: #213526;
+    margin: 0;
+    font: inherit;
+    width: 1.5em;
+    height: 1.5em;
+    /* border: 0.15em solid #516857; */
+    border-radius: 0.2rem;
+    /* transform: translateY(0.1rem); */
+    display: grid;
+    place-content: center;    
+    position: absolute;
+}
+
+
+.close_form:before {
+    position: relative;
+    content: "";
+    border-bottom: 2px solid white;
+    right: 100px;
+    width: 100%;
 }
 
 .form-box-geodata {

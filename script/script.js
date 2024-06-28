@@ -98,6 +98,8 @@ function closeForm() {
 // Hacer que el elemento DIV se arrastre:
 
 dragElement(document.getElementById("mydiv"));
+
+console.log(document.getElementById("mydiv").id);
     
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
