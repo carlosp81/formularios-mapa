@@ -1,13 +1,4 @@
-
-// function cargar_pagina(){
-//     alert("Ya se ha cargado el sitio web .:Bit:.");
-// }
-
-// //-------------------------------------------------------
-// function jorge(){
-//     alert("Este es el Boton de .:Bit:.");
-// }
-
+"use strict"
 // //-------------------------------------------------------
 // function openForm() {
 //   document.getElementById("myForm").style.display = "block";
