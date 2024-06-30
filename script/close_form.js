@@ -1,8 +1,8 @@
 "use strict"
 // //-------------------------------------------------------
-// function openForm() {
-//   document.getElementById("myForm").style.display = "block";
-// }
+function openForm() {
+  document.querySelector(".form-box").style.display = "block";
+}
   
 function closeForm() {
   document.querySelector(".form-box").style.display = "none";
