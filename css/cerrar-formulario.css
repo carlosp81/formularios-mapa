@@ -7,6 +7,7 @@ html, body, ul, li, label, input {
     margin: 0;
     padding: 0;
     border: 0;
+    user-select: none;
 }
 
 .container {
@@ -83,18 +84,18 @@ html, body, ul, li, label, input {
     top: 3rem;
     left: 24rem;
     border-radius: 20px 20px 20px 20px;
+    cursor: grabbing;
+    display: none;
 }
 
 .form-box-geodata {
     height: 16rem;
     width: 15rem;
-    display: none;
 }
 
 .form-box-busqueda {
     height: 16rem;
     width: 15rem;
-    display: none;
 }
 
 .form-box, .visor_modulos, .form-body__search ul li {
@@ -179,7 +180,7 @@ html, body, ul, li, label, input {
 
 .form-body__geodata {
     display: flex;
-    height: 14rem;
+    height: 16rem;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
@@ -199,21 +200,24 @@ html, body, ul, li, label, input {
     justify-content: space-evenly;
     height: 12rem;
     width: 12rem;
-    gap: -10rem;
-    /* background-color: aquamarine; */
     position: relative;
 }
 
 .form-body__search ul li {
-    background-color: #CD6D0D;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 2.5rem;
 }
 
 .form-body__search ul li select {
+    /* appearance: none; */
     color: #CD6D0D;
     font-size: 1rem;
     border: 0px;
     width: 100%;
-    height: 2.3rem;
+    height: 100%;
+    padding: 0 1rem 0 1rem;
     background-color: #F7F5F4;
 }
 
@@ -226,6 +230,7 @@ form ul li.form-box__options-body__field {
     border-radius: 0.4rem;
     background-color: #F7F5F4;
     position: relative;
+    margin: 1rem 0 1rem 0;
     padding: 0 0.5rem 0 0.5rem;
 }
 
