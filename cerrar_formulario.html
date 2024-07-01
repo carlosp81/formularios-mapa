@@ -25,14 +25,14 @@
             </section>
             <section class="visor_modulos__body">
                 <ul>
-                    <li>
+                    <li onclick="openForm('.form-box-busqueda')">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/buscar.png" alt="icono busqueda">
                             </span>
                         </a>
                     </li>
-                    <li onclick="openForm()">
+                    <li onclick="openForm('.form-box-geodata')">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/palma.png" alt="icono geoespectral">
@@ -70,8 +70,49 @@
                 </ul>
             </section>
         </div>
+        <div class="form-box form-box-busqueda">
+            <section class="form-header form-header__search">
+                <ul>
+                    <li class="form-header__icon">
+                        <a href="http://">
+                            <img src="./Iconos/icon_agro.ico" alt="icono agro">
+                        </a>
+                    </li>
+                    <li class="form-header__search">Busqueda</li>
+                    <li class="form-header__close_form" onclick="closeForm('.form-box-busqueda')">
+                        <input type="checkbox" name="close" id="close-form">
+                    </li>
+                </ul>
+            </section>
+            <section class="form-body form-body__search">
+                <ul>
+                    <li>
+                        <select name="choice">
+                            <option value="lote" selected>Lote</option>
+                            <option value="second">Second Value</option>
+                            <option value="third">Third Value</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select name="choice">
+                            <option value="finca" selected>Finca</option>
+                            <option value="first">First Value</option>
+                            <option value="second">Second Value</option>
+                            <option value="third">Third Value</option>
+                        </select>
+                    </li>
+                    <li>
+                        <select name="choice">
+                            <option value="first" selected>Numero de Lote</option>
+                            <option value="second">Second Value</option>
+                            <option value="third">Third Value</option>
+                        </select>
+                    </li>
+                </ul>
+            </section>
+        </div>
         <div class="form-box form-box-geodata" >
-            <section class="form-header">
+            <section class="form-header form-header__geodata">
                 <ul>
                     <li class="form-header__icon">
                         <a href="http://">
@@ -79,12 +120,12 @@
                         </a>
                     </li>
                     <li class="form-header__search">GeoData</li>
-                    <li class="form-header__close_form" >
-                        <input type="checkbox" name="close" id="close-form" onclick="closeForm()">
+                    <li class="form-header__close_form" onclick="closeForm('.form-box-geodata')">
+                        <input type="checkbox" name="close" id="close-form">
                     </li>
                 </ul>
             </section>
-            <section class="form-body">
+            <section class="form-body form-body__geodata">
                 <form action="" method="post">
                     <ul>
                         <li class="form-box__options-body__field">

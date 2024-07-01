@@ -1,11 +1,31 @@
 "use strict"
 // //-------------------------------------------------------
-function openForm() {
-  document.querySelector(".form-box").style.display = "block";
+function openForm(form_clas) {
+  const form_element = document.querySelector(form_clas)
+  switch(form_element.className) {
+    case "form-box form-box-busqueda":
+      form_element.style.display = "block";
+      dragElement(form_element);
+      break;
+    case "form-box form-box-geodata":
+      form_element.style.display = "block";
+      dragElement(form_element);
+      break;
+  }
 }
   
-function closeForm() {
-  document.querySelector(".form-box").style.display = "none";
+function closeForm(formulario_clase) {
+  const form_element = document.querySelector(formulario_clase)
+  switch(form_element.className) {
+    case "form-box form-box-busqueda":
+      console.log("CLOSE BUSQUEDA: ", form_element.className);
+      form_element.style.display = "none";
+      break;
+    case "form-box form-box-geodata":
+      console.log("CLOSE GEODATA: ", form_element.className);
+      form_element.style.display = "none";
+      break;
+  }
 }
 
 
@@ -13,16 +33,13 @@ function closeForm() {
 //--------------------------------------------------------------------------------
 // Make the DIV element draggagle:
 
-const geodata_form = document.querySelector(".form-box")
-
-dragElement(geodata_form);
     
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (geodata_form) {
+  if (elmnt) {
     /* if present, the header is where you move the DIV from:*/
     /* si está presente, el encabezado es desde donde mueves el DIV:*/
-    geodata_form.onmousedown = dragMouseDown;
+    elmnt.onmousedown = dragMouseDown;
   } else {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
     /* de lo contrario, mueva el DIV desde cualquier lugar dentro del DIV:*/

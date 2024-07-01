@@ -83,26 +83,40 @@ html, body, ul, li, label, input {
     top: 3rem;
     left: 24rem;
     border-radius: 20px 20px 20px 20px;
-    display: none;
 }
 
 .form-box-geodata {
     height: 16rem;
     width: 15rem;
+    display: none;
 }
 
-.form-box, .visor_modulos ul li {
+.form-box-busqueda {
+    height: 16rem;
+    width: 15rem;
+    display: none;
+}
+
+.form-box, .visor_modulos, .form-body__search ul li {
     list-style: none;
 }
 
 .form-header ul {
     display: flex;
     height: 4.4rem;
-    color: #CD6D0D;
     align-items: center;
     justify-content: space-around;
     border-radius: 20px 20px 0px 0px;
-    background-color: #37513D;
+}
+
+.form-header__search ul {
+    color: whitesmoke;
+    background-color: #CD6D0D;
+}
+
+.form-header__geodata ul {
+    color: #CD6D0D;
+    background-color: #37513D;;
 }
 
 .form-header ul li {
@@ -114,10 +128,12 @@ html, body, ul, li, label, input {
     position: relative;
 }
 
-.form-box-geodata img {
+.form-box-geodata img, .form-box-busqueda img {
     width: 2rem;
 }
 
+
+/* Deshabilitar hover sobre elemento <li> del header */
 .form-box .form-header ul li.form-header__search {
     font-size: 1.5rem;
 }
@@ -157,22 +173,48 @@ html, body, ul, li, label, input {
 
 /* Cuerpo del formulario (Tipo CheckBox) */
 .form-body {
+    background-color: #EBE7E4;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.form-body__geodata {
     display: flex;
     height: 14rem;
-    background-color: #EBE7E4;
     align-items: center;
     justify-content: space-evenly;
-    border-radius: 0px 0px 20px 20px;
     position: relative;
 }
 
-.form-body ul {
+
+.form-body__search {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 13rem;
+}
+
+.form-body__search ul {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     height: 12rem;
-    gap: 0.8rem;
+    width: 12rem;
+    gap: -10rem;
+    /* background-color: aquamarine; */
     position: relative;
+}
+
+.form-body__search ul li {
+    background-color: #CD6D0D;
+}
+
+.form-body__search ul li select {
+    color: #CD6D0D;
+    font-size: 1rem;
+    border: 0px;
+    width: 100%;
+    height: 2.3rem;
+    background-color: #F7F5F4;
 }
 
 form ul li.form-box__options-body__field {
