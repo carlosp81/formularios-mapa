@@ -85,17 +85,18 @@ html, body, ul, li, label, input {
     left: 24rem;
     border-radius: 20px 20px 20px 20px;
     cursor: grabbing;
-    display: none;
 }
 
 .form-box-geodata {
     height: 16rem;
     width: 15rem;
+    display: none;
 }
 
 .form-box-busqueda {
     height: 16rem;
     width: 15rem;
+    /* display: none; */
 }
 
 .form-box, .visor_modulos, .form-body__search ul li {
@@ -134,10 +135,15 @@ html, body, ul, li, label, input {
 }
 
 
+.form-box .form-header ul li.form-header-search__icon {
+    content: url("../Iconos/icon_agro.ico");
+}
+
 /* Deshabilitar hover sobre elemento <li> del header */
 .form-box .form-header ul li.form-header__search {
     font-size: 1.5rem;
 }
+
 
 .form-header ul li.form-header__close_form {
     background-color: #213526;
