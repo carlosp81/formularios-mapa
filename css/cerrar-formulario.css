@@ -96,7 +96,6 @@ html, body, ul, li, label, input {
 .form-box-busqueda {
     height: 16rem;
     width: 15rem;
-    /* display: none; */
 }
 
 .form-box, .visor_modulos, .form-body__search ul li {

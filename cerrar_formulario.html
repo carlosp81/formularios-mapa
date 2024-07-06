@@ -1,13 +1,15 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/cerrar-formulario.css" rel="stylesheet" type="text/css" />
-    <script src="./script/close_form.js" defer></script>
-    <title>cerrar Formulario</title>
- </head>
- <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet" href="https://js.arcgis.com/4.15/esri/themes/light/main.css"> -->
+<link href="css/cerrar-formulario.css" rel="stylesheet" type="text/css" />
+<script type="module" src="script/index.js"></script>
+<!-- <script src="https://js.arcgis.com/4.15/" defer></script> -->
+<title>cerrar Formulario</title>
+</head>
+<body>
     <div class="container">
         <div class="visor_modulos">
             <section class="visor_modulos__header">
@@ -25,42 +27,42 @@
             </section>
             <section class="visor_modulos__body">
                 <ul>
-                    <li onclick="openForm()">
+                    <li class="show-form-busqueda">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/buscar.png" alt="icono busqueda">
                             </span>
                         </a>
                     </li>
-                    <li onclick="openForm('.form-box-geodata')">
+                    <li class="show-form-geodata">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/palma.png" alt="icono geoespectral">
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li class="show-form">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/poligono.png" alt="icono poligono">
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li class="show-form">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/finca.png" alt="icono finca">
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li class="show-form">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/labor.png" alt="icono labor">
                             </span>
                         </a>
                     </li>
-                    <li>
+                    <li class="show-form">
                         <a href="#">
                             <span class="image-icon">
                                 <img src="./Iconos/informes.png" alt="icono informes">
@@ -70,7 +72,6 @@
                 </ul>
             </section>
         </div>
-        <div class="show-form__busqueda_geodata"></div>
         <div class="form-box form-box-geodata" >
             <section class="form-header form-header__geodata">
                 <ul>
@@ -80,7 +81,7 @@
                         </a>
                     </li>
                     <li class="form-header__search">GeoData</li>
-                    <li class="form-header__close_form" onclick="closeForm('.form-box-geodata')">
+                    <li class="form-header__close_form">
                         <input type="checkbox" name="close" id="close-form">
                     </li>
                 </ul>
@@ -107,7 +108,7 @@
                     </ul>
                 </form>
             </section>
-         </div>
+            </div>
     </div>
- </body>
- </html>
+</body>
+</html>
