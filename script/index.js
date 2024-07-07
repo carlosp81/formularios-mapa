@@ -1,45 +1,42 @@
-import { closeForm, dragElement, selectForm, showFormFromModule } from './utils.js'
+import { closeForm, showFormFromModule } from './utils.js'
 
 let module_search = document.querySelector(".show-form-busqueda");
 let module_geodata = document.querySelector(".show-form-geodata");
-let geodata_form = document.querySelector(".form-box-geodata");
-// geodata_form = null;
 
-let block = false;
+
+let block_search_form = false;
 module_search.addEventListener('click', () => {
     let search_form = document.querySelector(".form-box-busqueda");
-    // let search_form = document.querySelector(".form-box-busqueda");
-    while (block === false) {
+    
+    while (block_search_form === false) {
         search_form = showFormFromModule(module_search, search_form);
-        block = true;
+        block_search_form = true;
+        closeForm(search_form);
         break;
     }
-    closeForm(search_form);
-    console.log(search_form);
+    
     if (search_form === null) {
         search_form = showFormFromModule(module_search, search_form);
         closeForm(search_form);
     }
-    // while (block === false) {
-    //     search_form = showFormFromModule(module_search, search_form);
-    //     dragElement(search_form);
-    //     block = true;
-    //     break;
-    // }
-    // closeForm(search_form); 
-    // if (search_form === null) {
-    //     search_form = showFormFromModule(module_search, search_form);
-    //     closeForm(search_form);
-    // }
-    // console.log(search_form);
-    // count = 2;
-    // busqueda = createBusquedaForm();
 })
 
-let geodata = showFormFromModule(module_geodata, geodata_form);
-
-console.log(geodata);
-
+let block_geodata_form = false;
+module_geodata.addEventListener('click', () => {
+    let geodata_form = document.querySelector(".form-box-geodata");
+    
+    while (block_geodata_form === false) {
+        geodata_form = showFormFromModule(module_geodata, geodata_form);
+        block_geodata_form = true;
+        closeForm(geodata_form);
+        break;
+    }
+    
+    if (geodata_form === null) {
+        geodata_form = showFormFromModule(module_geodata, geodata_form);
+        closeForm(geodata_form);
+    }
+})
 
 // INCLUDE MAP
 
