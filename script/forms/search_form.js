@@ -1,5 +1,3 @@
-// import { closeForm } from '../utils'
-
 export default function createBusquedaFormHeader() {
     let section_header = document.createElement("section");
     section_header.classList.add("form-header", "form-header__search");

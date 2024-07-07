@@ -1,4 +1,5 @@
 import { createBusquedaForm } from './forms/search_form.js';
+import { createGeodataForm } from './forms/geodata_form.js';
  
 //------------------------ Arrastre DEL DIV --------------------------------------
 //--------------------------------------------------------------------------------
@@ -57,6 +58,7 @@ export function selectForm(module_element, element_form) {
             element_form = createBusquedaForm();
             break;
         case "show-form-geodata":
+            element_form = createGeodataForm();
             // element_form = createGeodataForm();
             console.log("CLICK GEODATA!!!");
             break;

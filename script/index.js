@@ -3,7 +3,7 @@ import { closeForm, dragElement, selectForm, showFormFromModule } from './utils.
 let module_search = document.querySelector(".show-form-busqueda");
 let module_geodata = document.querySelector(".show-form-geodata");
 let geodata_form = document.querySelector(".form-box-geodata");
-geodata_form = null;
+// geodata_form = null;
 
 let block = false;
 module_search.addEventListener('click', () => {
@@ -36,83 +36,11 @@ module_search.addEventListener('click', () => {
     // busqueda = createBusquedaForm();
 })
 
+let geodata = showFormFromModule(module_geodata, geodata_form);
+
+console.log(geodata);
 
 
-// if (search_form === null) {
-//     let busqueda = null;
-//     module_search.addEventListener('click', () => {
-//         let search_form = document.querySelector(".form-box-busqueda");
-//         // console.log(count);
-//         while (block === false) {
-//             search_form = showFormFromModule(module_search, search_form);
-//             // count += 1;
-//             dragElement(search_form);
-//             block = true;
-//             break;
-//         }
-//         closeForm(search_form); 
-//         console.log(search_form);
-//         // count = 2;
-//         // busqueda = createBusquedaForm();
-//     })
-// }
-
-// console.log(search_form);
-// if (search_form.className === "form-box form-box-busqueda") {
-//     dragElement(busqueda);
-//     closeForm(busqueda);
-//     block = false;
-// }
-// console.log("BUSQUDA");
-
-// let busqueda =  
-
-
-// console.log(module_geodata.className);
-// console.log(module_search.className);
-// console.log(search_form);
-// let count = 0;
-// console.log(count);
-// module_search.addEventListener('click', () => {
-//     // count = 1;
-//     while (count <= 1) {
-//         search_form = createBusquedaForm();
-//         closeForm(search_form);
-//         count += 1;
-//     }
-//     count = 0;
-//     // if ((search_form === null)) {
-//     //     while ((count >= 0) && (count < 1)) {
-//     //         count += 1;
-//     //         // break;
-//     //     }
-//     //     dragElement(search_form);
-//     //     // search_form = createBusquedaForm();        
-//     //     console.log(count);
-//     //     // search_form = null;
-//     // } else {
-//     //     // search_form = null;
-//     // }
-// })
-// console.log("SF: ", search_form);
-// if ((search_form === null)) {
-//     module_search.addEventListener('click', () => {
-//         search_form = createBusquedaForm();
-//         if ((search_form === null)) {
-//             while ((count >= 0) && (count < 1)) {
-//                 count += 1;
-//                 // break;
-//             }
-//             dragElement(search_form);
-//             closeForm(search_form);
-//             // search_form = createBusquedaForm();        
-//             console.log(count);
-//             // search_form = null;
-//         } else {
-//             // search_form = null;
-//         }
-//     })
-// }
 // INCLUDE MAP
 
 // function mapaesri(n){

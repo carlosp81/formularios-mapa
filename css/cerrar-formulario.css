@@ -90,7 +90,7 @@ html, body, ul, li, label, input {
 .form-box-geodata {
     height: 16rem;
     width: 15rem;
-    display: none;
+    /* display: none; */
 }
 
 .form-box-busqueda {
