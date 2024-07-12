@@ -1,4 +1,6 @@
-export default function createBusquedaFormHeader() {
+// import { createBusquedaFormBody as palma_form_body } from './forms/busqueda_forms/busqueda_palma.js';
+
+export function createBusquedaFormHeader() {
     let section_header = document.createElement("section");
     section_header.classList.add("form-header", "form-header__search");
     let ul_header = document.createElement("ul");
@@ -132,7 +134,7 @@ export function createBusquedaForm() {
   let section_header = createBusquedaFormHeader();
   formBusquedaElement.insertAdjacentElement("afterbegin", section_header);
 
-  let section_body = createBusquedaFormBody();
+  let section_body = palma_form_body();
   section_header.insertAdjacentElement("afterend", section_body);
 
   return formBusquedaElement

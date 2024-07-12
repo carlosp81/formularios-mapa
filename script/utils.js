@@ -1,6 +1,36 @@
-import { createBusquedaForm } from './forms/search_form.js';
+import { createBusquedaFormHeader, createBusquedaFormBody as search_body } from './forms/search_form.js';
+import { createBusquedaFormBody as palma_form_body } from './forms/busqueda_forms/busqueda_palma.js';
 import { createGeodataForm } from './forms/geodata_form.js';
- 
+
+
+export function createBusquedaForm() {
+    let form_element = document.querySelector(".visor_modulos");
+    let formBusquedaElement = document.createElement("div");
+    form_element.insertAdjacentElement("afterend", formBusquedaElement);
+    formBusquedaElement.classList.add("form-box", "form-box-busqueda");
+  
+    let section_header = createBusquedaFormHeader();
+    formBusquedaElement.insertAdjacentElement("afterbegin", section_header);
+  
+    let section_body = search_body();
+    
+    section_body = palma_form_body();
+    
+    if (section_body.firstChild[0].value === "palma") {
+        console.log(palma_form_body().firstChild[0].value);
+        section_header.insertAdjacentElement("afterend", section_body);
+    }
+    
+    section_header.insertAdjacentElement("afterend", section_body);
+    // section_body = search_body();
+  
+    return formBusquedaElement
+}
+
+
+
+
+
 //------------------------ Arrastre DEL DIV --------------------------------------
 //--------------------------------------------------------------------------------
 // Make the DIV element draggagle:
@@ -55,6 +85,13 @@ export function selectForm(module_element, element_form) {
         case "show-form-busqueda":
             console.log("CLICK BUSQUEDA");
             element_form = createBusquedaForm();
+            // if (palma_form_body().firstChild[0].value === "palma") {
+            //     console.log(palma_form_body().firstChild[0].value);
+            // }
+
+ 
+            // element_form = search_body();
+            // element_form = palma_form_body();
             break;
         case "show-form-geodata":
             element_form = createGeodataForm();
