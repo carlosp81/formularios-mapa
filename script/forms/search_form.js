@@ -28,101 +28,50 @@ export function createBusquedaFormHeader() {
 }
   
 export function createBusquedaFormBody() {
-let section_body = document.createElement("section");
+  let section_body = document.createElement("section");
 
-section_body.classList.add("form-body", "form-body__search");
+  section_body.classList.add("form-body", "form-body__search");
 
-let form = document.createElement("form");
-let ul_form = document.createElement("ul");
-let ul_li_form_select_one = document.createElement("li");
-let ul_li_form_select_two = document.createElement("li");
-let ul_li_form_select_three = document.createElement("li");
+  let form = document.createElement("form");
+  let ul_form = document.createElement("ul");
+  let ul_li_form_select_one = document.createElement("li");
 
-let form_select_one = document.createElement("select");
-let form_select_two = document.createElement("select");
-let form_select_three = document.createElement("select");
+  let form_select_one = document.createElement("select");
 
-// OPTIONS - SELECT ONE
-let ul_li_form_select_one_option_one = document.createElement("option");
-let ul_li_form_select_one_option_two = document.createElement("option");
-let ul_li_form_select_one_option_three = document.createElement("option");
+  section_body.insertAdjacentElement("afterbegin", form);
+  form.insertAdjacentElement("afterbegin", ul_form);
+  ul_form.insertAdjacentElement("beforeend", ul_li_form_select_one);
+ 
+  form_select_one.setAttribute("name", "choice");
 
-// OPTIONS - SELECT FIELD TWO
-let ul_li_form_select_two_option_one = document.createElement("option");
-let ul_li_form_select_two_option_two = document.createElement("option");
-let ul_li_form_select_two_option_three = document.createElement("option");
+  // SELECT ONE OPTIONS ATTRIBUTES
+  let menu_palma_options = ["palma", "zona", "lote", "linea"];
 
-// OPTIONS - SELECT FIELD THREE
-let ul_li_form_select_three_option_one = document.createElement("option");
-let ul_li_form_select_three_option_two = document.createElement("option");
-let ul_li_form_select_three_option_three = document.createElement("option");
+  let ul_li_form_select_option;
 
-section_body.insertAdjacentElement("afterbegin", form);
-form.insertAdjacentElement("afterbegin", ul_form);
-ul_form.insertAdjacentElement("beforeend", ul_li_form_select_one);
-ul_form.insertAdjacentElement("beforeend", ul_li_form_select_two);
-ul_form.insertAdjacentElement("beforeend", ul_li_form_select_three);
+  menu_palma_options.forEach((option_value) => {
+    ul_li_form_select_option = document.createElement("option");
+    ul_li_form_select_option.setAttribute("value", option_value);
+    ul_li_form_select_option.innerHTML = option_value.toUpperCase();
+    form_select_one.insertAdjacentElement("beforeend", ul_li_form_select_option);
+  });
 
-// SELECT ONE OPTIONS ATTRIBUTES
-ul_li_form_select_one.setAttribute("name", "choice");
-ul_li_form_select_one_option_one.setAttribute("value", "lote");
-ul_li_form_select_one_option_one.innerHTML = "Lote";
-ul_li_form_select_one_option_two.setAttribute("value", "Option-TWO");
-ul_li_form_select_one_option_two.setAttribute("selected", "");
-ul_li_form_select_one_option_two.innerHTML = "Option TWO";
-ul_li_form_select_one_option_three.setAttribute("value", "Option-THREE");
-ul_li_form_select_one_option_three.innerHTML = "Option THREE";
-
-// SELECT TWO OPTIONS ATTRIBUTES
-ul_li_form_select_two.setAttribute("name", "choice");
-ul_li_form_select_two_option_one.setAttribute("value", "finca");
-ul_li_form_select_two_option_one.innerHTML = "Finca";
-ul_li_form_select_two_option_two.setAttribute("value", "Option-TWO");
-ul_li_form_select_two_option_two.innerHTML = "Option TWO";
-ul_li_form_select_two_option_three.setAttribute("value", "Option-THREE");
-ul_li_form_select_two_option_three.innerHTML = "Option THREE";
-
-// SELECT THREE OPTIONS ATTRIBUTES
-ul_li_form_select_three.setAttribute("name", "choice");
-ul_li_form_select_three_option_one.setAttribute("value", "numero-lote");
-ul_li_form_select_three_option_one.innerHTML = "Numero de Lote";
-ul_li_form_select_three_option_two.setAttribute("value", "Option-TWO");
-ul_li_form_select_three_option_two.innerHTML = "Option TWO";
-ul_li_form_select_three_option_three.setAttribute("value", "Option-THREE");
-ul_li_form_select_three_option_three.innerHTML = "Option THREE";
+  ul_li_form_select_one.insertAdjacentElement("beforeend", form_select_one);
 
 
-ul_li_form_select_one.insertAdjacentElement("beforeend", form_select_one);
-form_select_one.insertAdjacentElement("beforeend", ul_li_form_select_one_option_one);
+  form_select_one.addEventListener("change", (e) => {
+    // form_select_one.options.item(2).setAttribute("selected", "selected")
+    console.log(form_select_one.selectedIndex);
+    
+    // for (const o_ele in form_select_one.options.selectedIndex) {
+    //   console.log(o_ele);
+    //   // if (o_ele == "selectedIndex"){
+    //   // }
+    // };
+    // console.log(form_select_one.options.namedItem("lote"));
+  })
 
-ul_li_form_select_one.insertAdjacentElement("beforeend", form_select_one);
-form_select_one.insertAdjacentElement("beforeend", ul_li_form_select_one_option_two);
-
-ul_li_form_select_one.insertAdjacentElement("beforeend", form_select_one);
-form_select_one.insertAdjacentElement("beforeend", ul_li_form_select_one_option_three);
-
-// SELECT FIELD TWO
-ul_li_form_select_two.insertAdjacentElement("afterbegin", form_select_two);
-form_select_two.insertAdjacentElement("beforeend", ul_li_form_select_two_option_one);
-
-ul_li_form_select_two.insertAdjacentElement("beforeend", form_select_two);
-form_select_two.insertAdjacentElement("beforeend", ul_li_form_select_two_option_two);
-
-ul_li_form_select_two.insertAdjacentElement("beforeend", form_select_two);
-form_select_two.insertAdjacentElement("beforeend", ul_li_form_select_two_option_three);
-
-
-// SELECT FIELD THREE
-ul_li_form_select_three.insertAdjacentElement("beforeend", form_select_three);
-form_select_three.insertAdjacentElement("beforeend", ul_li_form_select_three_option_one);
-
-ul_li_form_select_three.insertAdjacentElement("beforeend", form_select_three);
-form_select_three.insertAdjacentElement("beforeend", ul_li_form_select_three_option_two);
-
-ul_li_form_select_three.insertAdjacentElement("beforeend", form_select_three);
-form_select_three.insertAdjacentElement("beforeend", ul_li_form_select_three_option_three);
-
-return section_body
+  return section_body
 }
   
 export function createBusquedaForm() {

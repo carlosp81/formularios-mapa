@@ -1,5 +1,6 @@
 import { createBusquedaFormHeader, createBusquedaFormBody as search_body } from './forms/search_form.js';
-import { createBusquedaFormBody as palma_form_body } from './forms/busqueda_forms/busqueda_palma.js';
+import { createPalmaBody } from './forms/busqueda_forms/busqueda_palma.js';
+// import { createBusquedaFormBody as zona_form_body } from './forms/busqueda_forms/busqueda_zona.js';
 import { createGeodataForm } from './forms/geodata_form.js';
 
 
@@ -13,21 +14,78 @@ export function createBusquedaForm() {
     formBusquedaElement.insertAdjacentElement("afterbegin", section_header);
   
     let section_body = search_body();
-    
-    section_body = palma_form_body();
-    
-    if (section_body.firstChild[0].value === "palma") {
-        console.log(palma_form_body().firstChild[0].value);
-        section_header.insertAdjacentElement("afterend", section_body);
-    }
-    
+    let search_button = createButtonBody();
+    let palma_body = createPalmaBody();
     section_header.insertAdjacentElement("afterend", section_body);
+    
+    let form_palma = section_body.firstChild.firstChild;
+    console.log(form_palma);
+    form_palma.insertAdjacentElement("beforeend", palma_body);
+    form_palma.insertAdjacentElement("beforeend", search_button);
+    
+
+
+
+    // SELECT ONE OPTIONS ATTRIBUTES
+    
+    // console.log(section_body);
+    // console.log(form_palma.firstChild);
+    // for (const key in form_palma) {
+    //     console.log(form_palma.key);
+    //     // switch (key) {
+    //     //     case "palma":
+    //     //         console.log("PALMA");
+    //     //         break;
+    //     //     case "zona":
+    //     //         console.log("ZONA");
+    //     //         break;
+    //     //     case "Option-THREE":
+    //     //         console.log("Option-THREE");
+    //     //         break;
+    //     //     case "linea":
+    //     //         console.log("LINEA");
+    //     //         break;
+    //     //     default:
+    //     //         console.log("DEFAULT");
+    //     //         break;
+    //     // }
+    //     // if (form_palma[key] !== null) {
+    //     // }
+    //     // console.log();
+    // }
+    // console.log("PALMA: ", form_palma);
+    
+    
+    // if (palma_body.firstChild[0].value === "palma") {
+    //     // console.log(palma_body.firstChild[0].value);
+    // }
+    
+    // // let menu_zona = zona_form_body();
+    // // zona_body.style.display = "none";
+
+    // if (zona_body.firstChild[1].value === "zona") {
+    //     // console.log(zona_form_body().firstChild[1].value);
+    //     section_header.insertAdjacentElement("afterend", zona_body);
+    // }
+    
+    // section_header.insertAdjacentElement("afterend", zona_body);
     // section_body = search_body();
   
     return formBusquedaElement
 }
 
+export function createButtonBody() {
+    let search_button = document.createElement("li");
+  
+    let form_submit_button = document.createElement("button");
+    form_submit_button.type = "submit"
+    form_submit_button.innerHTML = "Buscar";
+    form_submit_button.classList.add("search-button");
 
+    search_button.insertAdjacentElement("beforeend", form_submit_button);
+  
+    return search_button
+  }
 
 
 
