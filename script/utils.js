@@ -1,6 +1,7 @@
 import { createBusquedaFormHeader, createBusquedaFormBody as search_body } from './forms/search_form.js';
 import { createPalmaBody } from './forms/busqueda_forms/busqueda_palma.js';
 import { createZonaBody } from './forms/busqueda_forms/busqueda_zona.js';
+import { createLoteBody } from './forms/busqueda_forms/busqueda_lote.js';
 import { createGeodataForm } from './forms/geodata_form.js';
 
 
@@ -17,6 +18,7 @@ export function createBusquedaForm() {
     let search_button = createButtonBody();
     let palma_body = createPalmaBody();
     let zona_body = createZonaBody();
+    
     section_header.insertAdjacentElement("afterend", section_body);
     
     let form_palma = section_body.firstChild.firstChild;
@@ -27,22 +29,109 @@ export function createBusquedaForm() {
     
     let busqueda_menu = form_palma.firstChild.firstChild;
 
-    
+    let lote_zona1_body;
+    let lote_zona2_body;
+    let lote_zona3_body
     busqueda_menu.addEventListener("change", () => {
-        console.log(busqueda_menu.value);
+        // console.log(busqueda_menu.value);
         switch (busqueda_menu.value) {
             case "palma":
                 zona_body.remove();
+                if (lote_zona1_body) {
+                    lote_zona1_body.remove();
+                }
+                if (lote_zona2_body) {
+                    lote_zona2_body.remove();
+                }
+                if (lote_zona3_body) {
+                    lote_zona3_body.remove();
+                }
                 form_palma.insertAdjacentElement("beforeend", palma_body);
                 form_palma.insertAdjacentElement("beforeend", search_button);
                 break;
             case "zona":
                 palma_body.remove();
+                lote_zona1_body = createLoteBody();
+                
+                // search_button.insertAdjacentElement("beforeend", lote_zona1_body);
                 form_palma.insertAdjacentElement("beforeend", zona_body);
                 form_palma.insertAdjacentElement("beforeend", search_button);
+                search_button.insertAdjacentElement("beforebegin", lote_zona1_body);
+
+
+                zona_body.firstChild.addEventListener("change", () => {
+                    console.log(zona_body.firstChild.value);
+                    if (lote_zona1_body) {
+                        lote_zona1_body.remove();
+                    }
+                    if (lote_zona2_body) {
+                        lote_zona2_body.remove();
+                    }
+                    if (lote_zona3_body) {
+                        lote_zona3_body.remove();
+                    }
+                    
+                    
+                    if (zona_body.firstChild.value === "zona1") {
+                        if (lote_zona2_body) {
+                            console.log("Existe lote Zone 2: ", lote_zona2_body);
+                            lote_zona2_body.remove();
+                        }
+                        if (lote_zona1_body) {
+                            console.log("Existe lote Zone 1: ", lote_zona1_body);
+                            lote_zona1_body.remove();
+                        }
+                        if (lote_zona3_body) {
+                            console.log("Existe lote Zone 3: ", lote_zona3_body);
+                            lote_zona3_body.remove();
+                        }
+                        form_palma.insertAdjacentElement("beforeend", lote_zona1_body);
+                        form_palma.insertAdjacentElement("beforeend", search_button);
+                    }
+
+                    if (zona_body.firstChild.value === "zona2") {
+                        
+                        if (lote_zona3_body) {
+                            console.log("Existe lote Zone 3: ", lote_zona3_body);
+                            lote_zona3_body.remove();
+                        }
+                        if (lote_zona1_body) {
+                            console.log("Existe lote Zone 1: ", lote_zona1_body);
+                            lote_zona1_body.remove();
+                        }
+                        lote_zona2_body = createLoteBody(zona_body.firstChild.value);
+                        form_palma.insertAdjacentElement("beforeend", lote_zona2_body);
+                        form_palma.insertAdjacentElement("beforeend", search_button);
+                    }
+
+                    if (zona_body.firstChild.value === "zona3") {
+                        if (lote_zona2_body) {
+                            console.log("Existe lote Zone 2: ", lote_zona2_body);
+                            lote_zona2_body.remove();
+                        }
+                        if (lote_zona1_body) {
+                            console.log("Existe lote Zone 1: ", lote_zona1_body);
+                            lote_zona1_body.remove();
+                        }
+                        lote_zona3_body = createLoteBody(zona_body.firstChild.value);
+                        form_palma.insertAdjacentElement("beforeend", lote_zona3_body);
+                        form_palma.insertAdjacentElement("beforeend", search_button);
+                    }
+                })
                 break;
             case "lote":
                 console.log("Lote");
+                zona_body.remove();
+                if (lote_zona1_body) {
+                    lote_zona1_body.remove();
+                }
+                if (lote_zona2_body) {
+                    lote_zona2_body.remove();
+                }
+                if (lote_zona3_body) {
+                    lote_zona3_body.remove();
+                }
+                palma_body.remove();
                 break;
             case "linea":
                 console.log("LINEA");
@@ -52,6 +141,8 @@ export function createBusquedaForm() {
                 break;
         }
     })
+
+    // form_palma.insertAdjacentElement("beforeend", search_button);
   
     return formBusquedaElement
 }
