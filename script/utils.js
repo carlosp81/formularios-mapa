@@ -17,7 +17,7 @@ export function createBusquedaForm() {
     let section_body = search_body();
     let search_button = createButtonBody();
     let palma_body = createPalmaBody();
-    let zona_body = createZonaBody();
+    
     
     section_header.insertAdjacentElement("afterend", section_body);
     
@@ -29,9 +29,13 @@ export function createBusquedaForm() {
     
     let busqueda_menu = form_palma.firstChild.firstChild;
 
+    let zona_body;
+
     let lote_zona1_body;
     let lote_zona2_body;
     let lote_zona3_body
+
+
     busqueda_menu.addEventListener("change", () => {
         // console.log(busqueda_menu.value);
         switch (busqueda_menu.value) {
@@ -51,12 +55,19 @@ export function createBusquedaForm() {
                 break;
             case "zona":
                 palma_body.remove();
-                lote_zona1_body = createLoteBody();
+                if (lote_zona1_body) {
+                    lote_zona1_body.remove();
+                }
+                if (lote_zona2_body) {
+                    lote_zona2_body.remove();
+                }
+                if (lote_zona3_body) {
+                    lote_zona3_body.remove();
+                }
+                zona_body = createZonaBody();
                 
-                // search_button.insertAdjacentElement("beforeend", lote_zona1_body);
                 form_palma.insertAdjacentElement("beforeend", zona_body);
                 form_palma.insertAdjacentElement("beforeend", search_button);
-                search_button.insertAdjacentElement("beforebegin", lote_zona1_body);
 
 
                 zona_body.firstChild.addEventListener("change", () => {
@@ -70,9 +81,9 @@ export function createBusquedaForm() {
                     if (lote_zona3_body) {
                         lote_zona3_body.remove();
                     }
-                    
-                    
+                    // SELECCION DE LAS ZONAS    
                     if (zona_body.firstChild.value === "zona1") {
+                        lote_zona1_body = createLoteBody();
                         if (lote_zona2_body) {
                             console.log("Existe lote Zone 2: ", lote_zona2_body);
                             lote_zona2_body.remove();
