@@ -2,6 +2,11 @@ export function createLoteBody(codigo_zona = "zona1") {
     let li_lotes = document.createElement("li");
 
     let form_select_lotes = document.createElement("select");
+    let select_option = document.createElement("option");
+    let texto_seleccion = "Seleccione un lote .."
+    select_option.setAttribute("value", "mensaje");
+    select_option.innerHTML = texto_seleccion;
+    form_select_lotes.insertAdjacentElement("beforeend", select_option);
 
     // SELECT ZONAS OPTIONS ATTRIBUTES
     let zona1_lotes_options = ["lote1", "lote2", "lote3"];

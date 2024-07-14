@@ -4,9 +4,14 @@ export function createZonaBody() {
     let form_select_zonas = document.createElement("select");
 
     // SELECT ZONAS OPTIONS ATTRIBUTES
+    let texto_seleccion = "Selecciona una zona ..";
     let zonas_menu_options = ["zona1", "zona2", "zona3"];
 
     let ul_li_form_select_option;
+    ul_li_form_select_option = document.createElement("option");
+    ul_li_form_select_option.setAttribute("value", "mensaje");
+    ul_li_form_select_option.innerHTML = texto_seleccion;
+    form_select_zonas.insertAdjacentElement("beforeend", ul_li_form_select_option);
 
     zonas_menu_options.forEach((option_value) => {
         ul_li_form_select_option = document.createElement("option");
