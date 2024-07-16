@@ -2,6 +2,7 @@ import { createBusquedaFormHeader, createBusquedaFormBody as search_body } from 
 import { createPalmaBody } from './forms/busqueda_forms/busqueda_palma.js';
 import { createZonaBody } from './forms/busqueda_forms/busqueda_zona.js';
 import { createLoteBody } from './forms/busqueda_forms/busqueda_lote.js';
+import { createLineasBody } from './forms/busqueda_forms/busqueda_lineas.js';
 import { createGeodataForm } from './forms/geodata_form.js';
 
 
@@ -20,7 +21,7 @@ export function createSelectSubmenu(form_body, menu_option_body, submenu_options
     let li_out = submenu_options_body;
 
     menu_option_body.firstChild.addEventListener("change", () => {
-        console.log(menu_option_body.firstChild.value);
+        // console.log("FC: ", menu_option_body.firstChild);
         console.log(submenu_values.option1);
         // SELECCION DE LAS ZONAS    
         if (menu_option_body.firstChild.value === submenu_values.option1) {
@@ -74,6 +75,29 @@ export function createSelectSubmenu(form_body, menu_option_body, submenu_options
 }
 
 
+// let submenu_options = {
+//     submenu_options_1 : "zonas",
+//     submenu_option_2 : "lotes", 
+// }
+
+// let submenu_option_values = {
+//     zonas : {
+//         option1 : "zona1",
+//         option2 : "zona2",
+//         option3 : "zona3",
+//         option4 : "mensaje",
+//     },
+//     lotes : {
+//         option1 : "lote1",
+//         option2 : "lote2",
+//         option3 : "lote3",
+//         option4 : "mensaje",
+//     }
+// }
+
+// console.log(submenu_option_values.zonas.option1);
+// console.log(submenu_option_values.lotes.option1);
+
 export function createBusquedaForm() {
     let form_element = document.querySelector(".visor_modulos");
     let formBusquedaElement = document.createElement("div");
@@ -100,13 +124,24 @@ export function createBusquedaForm() {
 
     let zona_body;
     let lote_body;
+    let linea_body;
+    let linea_lote_body;
+    // let lineas_lote1_body;
 
     let lotes_body = { };
+    let lineas_body = { };
 
     let lotes_option_value = {
         option1 : "zona1",
         option2 : "zona2",
         option3 : "zona3",
+        option4 : "mensaje",
+    }
+
+    let lineas_option_value = {
+        option1 : "lote1",
+        option2 : "lote2",
+        option3 : "lote3",
         option4 : "mensaje",
     }
 
@@ -163,14 +198,45 @@ export function createBusquedaForm() {
                 }
                 // zona_body.remove();
                 lote_body = createZonaBody();
-                lotes_body.zona1 = createLoteBody();
-                lotes_body.zona2 = createLoteBody("zona2");
-                lotes_body.zona3 = createLoteBody("zona3");
+                lineas_body.lote1 = createLoteBody();
+                lineas_body.lote2 = createLoteBody("lote2");
+                lineas_body.lote3 = createLoteBody("lote3");
                 // CREA EL MENU DE SELECCION DE LOTES POR ZONA SELECCIONADA
                 createSelectSubmenu(form_palma, lote_body, lotes_body, lotes_option_value, search_button);
                 break;
             case "linea":
                 console.log("LINEA");
+                // REMOVER FORMULARIOS
+                if (lotes_body.zona1) {
+                    lotes_body.zona1.remove();
+                }
+                if (lotes_body.zona2) {
+                    lotes_body.zona2.remove();
+                }
+                if (lotes_body.zona3) {
+                    lotes_body.zona3.remove();
+                }
+
+                palma_body.remove();
+                if (lote_body != undefined) {
+                    lote_body.remove();
+                }
+                if (zona_body != undefined) {
+                    zona_body.remove();
+                }
+                
+                linea_body = createZonaBody();
+                linea_lote_body = createLoteBody()
+                
+                lotes_body.zona1 = createLoteBody();
+                lotes_body.zona2 = createLoteBody("zona2");
+                lotes_body.zona3 = createLoteBody("zona3");
+
+                lineas_body.lote1 = createLineasBody();
+                lineas_body.lote2 = createLineasBody("lote2");
+                lineas_body.lote3 = createLineasBody("lote3");
+
+                createSelectSubmenu(form_palma, linea_body, lotes_body, lineas_option_value, search_button);
                 break;
             default:
                 console.log("DEFAULT");
