@@ -58,19 +58,6 @@ export function createBusquedaFormBody() {
 
   ul_li_form_select_one.insertAdjacentElement("beforeend", form_select_one);
 
-
-  // form_select_one.addEventListener("change", (e) => {
-  //   // form_select_one.options.item(2).setAttribute("selected", "selected")
-  //   console.log(form_select_one);
-    
-  //   // for (const o_ele in form_select_one.options.selectedIndex) {
-  //   //   console.log(o_ele);
-  //   //   // if (o_ele == "selectedIndex"){
-  //   //   // }
-  //   // };
-  //   // console.log(form_select_one.options.namedItem("lote"));
-  // })
-
   return section_body
 }
   
