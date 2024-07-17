@@ -19,10 +19,10 @@ export function createLoteBody(codigo_zona = "zona1") {
 
     //SELECCIONAR LOTES SEGUN ZONA
     if (codigo_zona === "zona1") {
-        if (zona2_lotes_option != null && zona3_lotes_option != null) {
-            zona2_lotes_option.remove();
-            zona3_lotes_option.remove();
-        }
+        // if (zona2_lotes_option != null && zona3_lotes_option != null) {
+        //     zona2_lotes_option.remove();
+        //     zona3_lotes_option.remove();
+        // }
 
         zona1_lotes_options.forEach((option_value) => {
             zona1_lotes_option = document.createElement("option");
@@ -32,10 +32,10 @@ export function createLoteBody(codigo_zona = "zona1") {
         })      
     }
     if (codigo_zona === "zona2") {
-        if (zona1_lotes_option != null && zona3_lotes_option != null) {
-            zona1_lotes_option.remove();
-            zona3_lotes_option.remove();
-        }
+        // if (zona1_lotes_option != null && zona3_lotes_option != null) {
+        //     zona1_lotes_option.remove();
+        //     zona3_lotes_option.remove();
+        // }
         zona2_lotes_options.forEach((option_value) => {
 
             zona2_lotes_option = document.createElement("option");
@@ -46,10 +46,10 @@ export function createLoteBody(codigo_zona = "zona1") {
     }
 
     if (codigo_zona === "zona3") {
-        if (zona1_lotes_option != null && zona2_lotes_option != null) {
-            zona1_lotes_option.remove();
-            zona2_lotes_option.remove();
-        }
+        // if (zona1_lotes_option != null && zona2_lotes_option != null) {
+        //     zona1_lotes_option.remove();
+        //     zona2_lotes_option.remove();
+        // }
         zona3_lotes_options.forEach((option_value) => {
 
             zona3_lotes_option = document.createElement("option");
