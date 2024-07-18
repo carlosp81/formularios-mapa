@@ -15,6 +15,9 @@ export function createLineasBody(codigo_lote = "lote1") {
     let lote4_lineas_options = ["linea10", "linea11", "linea12"];
     let lote5_lineas_options = ["linea13", "linea14", "linea15"];
     let lote6_lineas_options = ["linea16", "linea17", "linea18"];
+    let lote7_lineas_options = ["linea19", "linea20", "linea21"];
+    let lote8_lineas_options = ["linea22", "linea23", "linea24"];
+    let lote9_lineas_options = ["linea25", "linea26", "linea27"];
 
     let lote1_lineas_option;
     let lote2_lineas_option;
@@ -22,14 +25,12 @@ export function createLineasBody(codigo_lote = "lote1") {
     let lote4_lineas_option;
     let lote5_lineas_option;
     let lote6_lineas_option;
+    let lote7_lineas_option;
+    let lote8_lineas_option;
+    let lote9_lineas_option;
 
     //SELECCIONAR LOTES SEGUN ZONA
     if (codigo_lote === "lote1") {
-        if (lote2_lineas_option != undefined && lote3_lineas_option != undefined) {
-            lote2_lineas_option.remove();
-            lote3_lineas_option.remove();
-        }
-
         lote1_lineas_options.forEach((option_value) => {
             lote1_lineas_option = document.createElement("option");
             lote1_lineas_option.setAttribute("value", option_value);
@@ -38,10 +39,6 @@ export function createLineasBody(codigo_lote = "lote1") {
         })      
     }
     if (codigo_lote === "lote2") {
-        if (lote1_lineas_option != undefined && lote3_lineas_option != undefined) {
-            lote1_lineas_option.remove();
-            lote3_lineas_option.remove();
-        }
         lote2_lineas_options.forEach((option_value) => {
 
             lote2_lineas_option = document.createElement("option");
@@ -52,10 +49,6 @@ export function createLineasBody(codigo_lote = "lote1") {
     }
 
     if (codigo_lote === "lote3") {
-        if (lote1_lineas_option != undefined && lote2_lineas_option != undefined) {
-            lote1_lineas_option.remove();
-            lote2_lineas_option.remove();
-        }
         lote3_lineas_options.forEach((option_value) => {
 
             lote3_lineas_option = document.createElement("option");
@@ -66,10 +59,6 @@ export function createLineasBody(codigo_lote = "lote1") {
     }
     // LOTES DE LA ZONA 2
     if (codigo_lote === "lote4") {
-        // if (lote1_lineas_option != undefined && lote2_lineas_option != undefined) {
-        //     lote1_lineas_option.remove();
-        //     lote2_lineas_option.remove();
-        // }
         lote4_lineas_options.forEach((option_value) => {
 
             lote4_lineas_option = document.createElement("option");
@@ -80,10 +69,6 @@ export function createLineasBody(codigo_lote = "lote1") {
     }
 
     if (codigo_lote === "lote5") {
-        // if (lote1_lineas_option != undefined && lote2_lineas_option != undefined) {
-        //     lote1_lineas_option.remove();
-        //     lote2_lineas_option.remove();
-        // }
         lote5_lineas_options.forEach((option_value) => {
 
             lote5_lineas_option = document.createElement("option");
@@ -94,16 +79,42 @@ export function createLineasBody(codigo_lote = "lote1") {
     }
 
     if (codigo_lote === "lote6") {
-        // if (lote1_lineas_option != undefined && lote2_lineas_option != undefined) {
-        //     lote1_lineas_option.remove();
-        //     lote2_lineas_option.remove();
-        // }
         lote6_lineas_options.forEach((option_value) => {
 
             lote6_lineas_option = document.createElement("option");
             lote6_lineas_option.setAttribute("value", option_value);
             lote6_lineas_option.innerHTML = option_value.toUpperCase();
             form_select_lineas.insertAdjacentElement("beforeend", lote6_lineas_option);
+        })      
+    }
+    // LOTES DE LA ZONA 3
+    if (codigo_lote === "lote7") {
+        lote7_lineas_options.forEach((option_value) => {
+
+            lote7_lineas_option = document.createElement("option");
+            lote7_lineas_option.setAttribute("value", option_value);
+            lote7_lineas_option.innerHTML = option_value.toUpperCase();
+            form_select_lineas.insertAdjacentElement("beforeend", lote7_lineas_option);
+        })      
+    }
+
+    if (codigo_lote === "lote8") {
+        lote8_lineas_options.forEach((option_value) => {
+
+            lote8_lineas_option = document.createElement("option");
+            lote8_lineas_option.setAttribute("value", option_value);
+            lote8_lineas_option.innerHTML = option_value.toUpperCase();
+            form_select_lineas.insertAdjacentElement("beforeend", lote8_lineas_option);
+        })      
+    }
+
+    if (codigo_lote === "lote9") {
+        lote9_lineas_options.forEach((option_value) => {
+
+            lote9_lineas_option = document.createElement("option");
+            lote9_lineas_option.setAttribute("value", option_value);
+            lote9_lineas_option.innerHTML = option_value.toUpperCase();
+            form_select_lineas.insertAdjacentElement("beforeend", lote9_lineas_option);
         })      
     }
 

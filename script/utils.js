@@ -6,465 +6,47 @@ import { createLineasBody } from './forms/busqueda_forms/busqueda_lineas.js';
 import { createGeodataForm } from './forms/geodata_form.js';
 
 
-// /**
-//  * [Crea un submenu]
-//  * @param  {[HTMLLIElement]} menu_option_body [zona_options_body]
-//  * @param  {[HTMLLIElement]} submenu_options_body [lote_options_body]
-//  * @param { [Object] } submenu_values [lote_option_values]
-//  * @param { [HTMLButtonElement] } button_ele [search_button]
-//  * @return {[HTMLLIElement]} [retorna lotes de la zona seleccionada]
-//  */
-// export function createSelectSubmenu(form_body, menu_option_zonas, submenu_options_lotes, submenu_options_lineas, submenu_values, button_ele) {
-
-//     form_body.insertAdjacentElement("beforeend", menu_option_body);
-//     form_body.insertAdjacentElement("beforeend", button_ele);
-//     let li_out = submenu_options_body;
-
-//     menu_option_zonas.firstChild.addEventListener("change", () => {
-//         // console.log("FC: ", menu_option_body.firstChild);
-//         console.log(submenu_values.option1);
-//         // SELECCION DE LAS ZONAS    
-//         if (menu_option_body.firstChild.value === submenu_values.option1) {
-//             if (li_out.zona2) {
-//                 li_out.zona2.remove();
-//             }
-//             if (li_out.zona3) {
-//                 li_out.zona3.remove();
-//             }
-//             form_body.insertAdjacentElement("beforeend", li_out.zona1);
-//             form_body.insertAdjacentElement("beforeend", button_ele);
-//         }
-
-//         if (menu_option_body.firstChild.value === submenu_values.option2) {
-//             if (li_out.zona1) {
-//                 li_out.zona1.remove();
-//             }
-//             if (li_out.zona3) {
-//                 li_out.zona3.remove();
-//             }
-
-//             form_body.insertAdjacentElement("beforeend", li_out.zona2);
-//             form_body.insertAdjacentElement("beforeend", button_ele);
-//         }
-        
-//         if (menu_option_body.firstChild.value === submenu_values.option3) {
-//             if (li_out.zona1) {
-//                 li_out.zona1.remove();
-//             }
-//             if (li_out.zona2) {
-//                 li_out.zona2.remove();
-//             }
-//             form_body.insertAdjacentElement("beforeend", li_out.zona3);
-//             form_body.insertAdjacentElement("beforeend", button_ele);
-//         }
-//         if (menu_option_body.firstChild.value === submenu_values.option4) {
-//             li_out.zona1.remove();
-//             li_out.zona2.remove();
-//             // li_out.zona2.remove();
-//             // li_out.zona3.remove();
-//             // if (li_out.zona1) {
-//             // }
-//             // if (li_out.zona2) {
-//             // }
-//             // form_body.insertAdjacentElement("beforeend", li_out.zona3);
-//             // form_body.insertAdjacentElement("beforeend", button_ele);
-//         }
-
-//     })
-//     return li_out
-// }
-
-// parent_menu_zonas, parent_menu_lotes, child_menu_lineas, nesting_level
-// let zonas = {}
-// let lotes = {
-//     zona1 : ["lote1", "lote2", "lote3"],
-// }
-
-
-// console.log(busqueda.lotes.zona1);
-    
-// submenu_child = busqueda.lotes.zona1
-function submenuInformation() {
-    let busqueda = {
-        zonas: createZonaBody(),
-        lotes : {
-            zona1 : createLoteBody(),
-            zona2 : createLoteBody("zona2"),
-            zona3 : createLoteBody("zona3"),
+let busqueda = {
+    zona_body : undefined,
+    lote_body : undefined,
+    linea_body : undefined,
+    zonas_lotes : {
+        zona1 : undefined,
+        zona2 : undefined,
+        zona3 : undefined
+    },
+    zonas_lineas : {
+        zona1 : {
+            lote1 : undefined,
+            lote2 : undefined,
+            lote3 : undefined
         },
-        lineas : {
-            lote1 : createLineasBody(),
-            lote2 : createLineasBody("lote2"),
-            lote3 : createLineasBody("lote3"),
-            lote4 : createLineasBody("lote4"),
-            lote5 : createLineasBody("lote5"),
-            lote6 : createLineasBody("lote6"),
-        }
-    };
-    return busqueda    
-}
+        zona2 : {
+            lote4 : undefined,
+            lote5 : undefined,
+            lote6 : undefined
+        },
+        zona3 : {
+            lote7 : undefined,
+            lote8 : undefined,
+            lote9 : undefined
+        },
+    },
+};
 
-let submenu_info = submenuInformation();
-
-console.log(submenu_info.zonas);
-
-let zonas_obj = {zonas:[]};
-function crearSubmenuLineas(main_form, button, info_menu) {
-    info_menu.zonas.firstChild.childNodes.forEach((zona) => {
-        zonas_obj.zonas.push(zona);
-        // console.log(zona.value);
-        selectLote(main_form, button, info_menu, zona);
-    });
-}
-// let lotes = {};
-// let lineas = {}
-console.log(zonas_obj);
-function selectLote(main_form, button, info_menu, zona_ele) {
-    let lotes_zona1;
-    let lotes_zona2;
-    let lotes_zona3;
-    let lineas_lote1;
-    let lineas_lote2;
-    let lineas_lote3;
-    let lineas_lote4;
-    let lineas_lote5;
-    let lineas_lote6;
-    let lineas_7;
-    let lineas_8;
-    let lineas_9;
-    // if (zona_ele) {
-    //     zona_ele.remove();
-    // }
-    
-    switch (zona_ele.value) {
-        case "zona1":
-            
-            if (lotes_zona1 != undefined) {
-                lotes_zona1.remove();
-            }
-            if (lotes_zona2 != undefined) {
-                lotes_zona2.remove();
-            }
-            if (lotes_zona3 != undefined) {
-                lotes_zona3.remove();
-            }
-            if (lineas_lote1 != undefined) {
-                lineas_lote1.remove();
-            }
-            if (lineas_lote2 != undefined) {
-                lineas_lote2.remove();
-            }
-            if (lineas_lote3 != undefined) {
-                lineas_lote3.remove();
-            }
-            if (lineas_lote4 != undefined) {
-                lineas_lote4.remove();
-            }
-            if (lineas_lote5 != undefined) {
-                lineas_lote5.remove();
-            }
-            if (lineas_lote6 != undefined) {
-                lineas_lote6.remove();
-            }
-            
-            // lotes_zona1 = info_menu.lotes.zona1;
-            info_menu.zonas.addEventListener("change", (e) => {
-                if (e.target.value === "zona1") {
-                    if (lotes_zona2) {
-                        lotes_zona2.remove();
-                    }
-                    if (lotes_zona3) {
-                        lotes_zona3.remove();
-                    }
-                    info_menu.lotes.zona2.remove();
-                    // main_form.insertAdjacentElement("beforeend", info_menu.zonas);
-                    main_form.insertAdjacentElement("beforeend", info_menu.lotes.zona1);
-                    main_form.insertAdjacentElement("beforeend", button);
-                    
-                    // lotes.lotes_zona1 = info_menu.lotes.zona1;
-                    info_menu.lotes.zona1.addEventListener("change", (e) => {
-                        if (e.target.value === "lote1") {
-                            if (lineas_lote1 != undefined) {
-                                lineas_lote1.remove();
-                            }
-                            if (lineas_lote2 != undefined) {
-                                lineas_lote2.remove();
-                            }
-                            if (lineas_lote3 != undefined) {
-                                lineas_lote3.remove();
-                            }
-                            if (lineas_lote4 != undefined) {
-                                lineas_lote4.remove();
-                            }
-                            if (lineas_lote5 != undefined) {
-                                lineas_lote5.remove();
-                            }
-                            if (lineas_lote6 != undefined) {
-                                lineas_lote6.remove();
-                            }
-                            lineas_lote1 = info_menu.lineas.lote1
-                            main_form.insertAdjacentElement("beforeend", lineas_lote1);
-                            main_form.insertAdjacentElement("beforeend", button);
-                        }
-                        lineas_lote2 = info_menu.lineas.lote2
-                        if (e.target.value === "lote2") {
-                            if (lineas_lote1 != undefined) {
-                                lineas_lote1.remove();
-                            }
-                            if (lineas_lote2 != undefined) {
-                                lineas_lote2.remove();
-                            }
-                            if (lineas_lote3 != undefined) {
-                                lineas_lote3.remove();
-                            }
-                            if (lineas_lote4 != undefined) {
-                                lineas_lote4.remove();
-                            }
-                            if (lineas_lote5 != undefined) {
-                                lineas_lote5.remove();
-                            }
-                            if (lineas_lote6 != undefined) {
-                                lineas_lote6.remove();
-                            }
-                            
-                            main_form.insertAdjacentElement("beforeend", lineas_lote2);
-                            main_form.insertAdjacentElement("beforeend", button);
-                        }
-                        if (e.target.value === "lote3") {
-                            if (lineas_lote1 != undefined) {
-                                lineas_lote1.remove();
-                            }
-                            if (lineas_lote2 != undefined) {
-                                lineas_lote2.remove();
-                            }
-                            if (lineas_lote3 != undefined) {
-                                lineas_lote3.remove();
-                            }
-                            if (lineas_lote4 != undefined) {
-                                lineas_lote4.remove();
-                            }
-                            if (lineas_lote5 != undefined) {
-                                lineas_lote5.remove();
-                            }
-                            if (lineas_lote6 != undefined) {
-                                lineas_lote6.remove();
-                            }
-                            lineas_lote3 = info_menu.lineas.lote3
-                            main_form.insertAdjacentElement("beforeend", lineas_lote3);
-                            main_form.insertAdjacentElement("beforeend", button);
-                        }
-                    })
-                }
-            })
-            
-            console.log("LOTES ZONA1: ", info_menu.lotes.zona1);
-            console.log("LOTES ZONA2: ", info_menu.lotes.zona2);
-            break;
-        case "zona2":
-            info_menu.lotes.zona1.remove();
-            if (lotes.lotes_zona1 != undefined) {
-                console.log("LOTES ZONA1 VISTO EN ZONA2: ", lotes.lotes_zona1);
-                lotes.lotes_zona1.remove();
-            }
-            if (lotes_zona1 != undefined) {
-                lotes_zona1.remove();
-            }
-            if (lotes_zona2 != undefined) {
-                lotes_zona2.remove();
-            }
-            if (lotes_zona3 != undefined) {
-                lotes_zona3.remove();
-            }
-            if (lineas_lote1 != undefined) {
-                lineas_lote1.remove();
-            }
-            if (lineas_lote2 != undefined) {
-                lineas_lote2.remove();
-            }
-            if (lineas_lote3 != undefined) {
-                lineas_lote3.remove();
-            }
-            if (lineas_lote4 != undefined) {
-                lineas_lote4.remove();
-            }
-            if (lineas_lote5 != undefined) {
-                lineas_lote5.remove();
-            }
-            if (lineas_lote6 != undefined) {
-                lineas_lote6.remove();
-            }
-
-            lotes_zona2 = info_menu.lotes.zona2;
-            lineas_lote4 = info_menu.lineas.lote4;
-            lineas_lote5 = info_menu.lineas.lote5;
-            lineas_lote6 = info_menu.lineas.lote6;
-            lotes_zona2.addEventListener("change", (e) => {
-                if (e.target.value === "lote4") {
-                    if (lineas_lote1 != undefined) {
-                        lineas_lote1.remove();
-                    }
-                    if (lineas_lote2 != undefined) {
-                        lineas_lote2.remove();
-                    }
-                    if (lineas_lote3 != undefined) {
-                        lineas_lote3.remove();
-                    }
-                    if (lineas_lote4 != undefined) {
-                        lineas_lote4.remove();
-                    }
-                    if (lineas_lote5 != undefined) {
-                        lineas_lote5.remove();
-                    }
-                    if (lineas_lote6 != undefined) {
-                        lineas_lote6.remove();
-                    }
-                    
-                    main_form.insertAdjacentElement("beforeend", lineas_lote4);
-                    main_form.insertAdjacentElement("beforeend", button);
-                }
-                if (e.target.value === "lote5") {
-                    if (lineas_lote1 != undefined) {
-                        lineas_lote1.remove();
-                    }
-                    if (lineas_lote2 != undefined) {
-                        lineas_lote2.remove();
-                    }
-                    if (lineas_lote3 != undefined) {
-                        lineas_lote3.remove();
-                    }
-                    if (lineas_lote4 != undefined) {
-                        lineas_lote4.remove();
-                    }
-                    if (lineas_lote5 != undefined) {
-                        lineas_lote5.remove();
-                    }
-                    if (lineas_lote6 != undefined) {
-                        lineas_lote6.remove();
-                    }
-                    
-                    main_form.insertAdjacentElement("beforeend", lineas_lote5);
-                    main_form.insertAdjacentElement("beforeend", button);
-                }
-                if (e.target.value === "lote6") {
-                    if (lineas_lote1 != undefined) {
-                        lineas_lote1.remove();
-                    }
-                    if (lineas_lote2 != undefined) {
-                        lineas_lote2.remove();
-                    }
-                    if (lineas_lote3 != undefined) {
-                        lineas_lote3.remove();
-                    }
-                    if (lineas_lote4 != undefined) {
-                        lineas_lote4.remove();
-                    }
-                    if (lineas_lote5 != undefined) {
-                        lineas_lote5.remove();
-                    }
-                    if (lineas_lote6 != undefined) {
-                        lineas_lote6.remove();
-                    }
-                    
-                    main_form.insertAdjacentElement("beforeend", lineas_lote6);
-                    main_form.insertAdjacentElement("beforeend", button);
-                }
-            })
-            info_menu.zonas.addEventListener("change", (e) => {
-                if (e.target.value === "zona2") {
-                    if (lineas_lote1 != undefined) {
-                        lineas_lote1.remove();
-                    }
-                    if (lineas_lote2 != undefined) {
-                        lineas_lote2.remove();
-                    }
-                    if (lineas_lote3 != undefined) {
-                        lineas_lote3.remove();
-                    }
-                    if (lineas_lote4 != undefined) {
-                        lineas_lote4.remove();
-                    }
-                    if (lineas_lote5 != undefined) {
-                        lineas_lote5.remove();
-                    }
-                    if (lineas_lote6 != undefined) {
-                        lineas_lote6.remove();
-                    }
-                    // main_form.insertAdjacentElement("beforeend", info_menu.zonas);
-                    main_form.insertAdjacentElement("beforeend", lotes_zona2);
-                    main_form.insertAdjacentElement("beforeend", button);
-                }
-            })
-            console.log("LOTES ZONA2: ", lotes_zona2);
-            break;
-        case "zona3":
-            if (lotes_zona1 != undefined) {
-                lotes_zona1.remove();
-            }
-            if (lotes_zona2 != undefined) {
-                lotes_zona2.remove();
-            }
-            if (lotes_zona3 != undefined) {
-                lotes_zona3.remove();
-            }
-            if (lineas_lote1 != undefined) {
-                lineas_lote1.remove();
-            }
-            if (lineas_lote2 != undefined) {
-                lineas_lote2.remove();
-            }
-            if (lineas_lote3 != undefined) {
-                lineas_lote3.remove();
-            }
-            if (lineas_lote4 != undefined) {
-                lineas_lote4.remove();
-            }
-            if (lineas_lote5 != undefined) {
-                lineas_lote5.remove();
-            }
-            if (lineas_lote6 != undefined) {
-                lineas_lote6.remove();
-            }
-            lotes_zona3 = info_menu.lotes.zona3;
-            main_form.insertAdjacentElement("beforeend", info_menu.zonas);
-            info_menu.zonas.addEventListener("change", (e) => {
-                if (e.target.value === "zona3") {
-                    info_menu.lotes.zona2.remove();
-                    info_menu.lotes.zona1.remove();
-                    main_form.insertAdjacentElement("beforeend", lotes_zona3);
-                    main_form.insertAdjacentElement("beforeend", button);
-                    lotes_zona3.addEventListener("change", (e) => {
-                        let select = e.target;
-                        console.log(select.value);
-                    })
-                }
-            })
-            console.log("LOTES ZONA3: ", lotes_zona3);
-            break;    
-        default:
-            break;
+///------COMIENZO FUNCIONES PARA REMOVER MENUS DE SELECCION
+const remover_elementos_body = (busqueda_obj) => {
+    if (busqueda_obj.lote_body != undefined) {
+        busqueda_obj.lote_body.remove();
+    }
+    if (busqueda_obj.zona_body != undefined) {
+        busqueda_obj.zona_body.remove();
+    }
+    if (busqueda_obj.linea_body != undefined) {
+        busqueda_obj.linea_body.remove();
     }
 }
 
-function selectLinea(info_menu, lote_ele) {
-    let linea_num;
-    switch (lote_ele.value) {
-        case "lote1":
-            linea_num = info_menu.lineas.lote1;
-            console.log("LINEAS LOTE1: ", linea_num);
-            break;
-        case "zona2":
-            lote_num = info_menu.lineas.lote2;
-            console.log("LOTES ZONA2: ", linea_num);
-            break;
-        case "zona3":
-            lote_num = info_menu.lineas.lote3;
-            console.log("LOTES ZONA3: ", linea_num);
-            break;    
-        default:
-            break;
-    }
-    return linea_num
-}
 
 const eliminar_lotes = (lotes) => {
     if (lotes.zona1 != undefined) {
@@ -478,13 +60,140 @@ const eliminar_lotes = (lotes) => {
     }
 }
 
-const lineas_por_lote = (lote_element) => {
-    lote_element.addEventListener("change", (e) => {
-        console.log(e.target);
-    })
+
+const remover_elementos_lineas = (lineas) => {
+    if (lineas.zona1.lote1 != undefined) {
+        lineas.zona1.lote1.remove();
+    }
+    if (lineas.zona1.lote2 != undefined) {
+        lineas.zona1.lote2.remove();
+    }
+    if (lineas.zona1.lote3 != undefined) {
+        lineas.zona1.lote3.remove();
+    }
+    if (lineas.zona2.lote4 != undefined) {
+        lineas.zona2.lote4.remove();
+    }
+    if (lineas.zona2.lote5 != undefined) {
+        lineas.zona2.lote5.remove();
+    }
+    if (lineas.zona2.lote6 != undefined) {
+        lineas.zona2.lote6.remove();
+    }
+    if (lineas.zona3.lote7 != undefined) {
+        lineas.zona3.lote7.remove();
+    }
+    if (lineas.zona3.lote8 != undefined) {
+        lineas.zona3.lote8.remove();
+    }
+    if (lineas.zona3.lote9 != undefined) {
+        lineas.zona3.lote9.remove();
+    }
 }
 
+///-----TERMINA FUNCIONES PARA REMOVER MENUS DE SELECCION
+
+const info_lineas = (busqueda_obj, zona, lote) => {
+    busqueda_obj[zona][lote] = createLineasBody(lote);
+    return busqueda_obj[zona][lote]
+}
+
+
+const lineas_zona1 = (main_form, button, lote_value, busqueda_obj) => {
+    remover_elementos_lineas(busqueda_obj.zonas_lineas);
+    
+    // CREAR LINEAS POR LOTES
+    let lineas_lote1 = info_lineas(busqueda_obj.zonas_lineas, "zona1", "lote1");
+    let lineas_lote2 = info_lineas(busqueda_obj.zonas_lineas, "zona1", "lote2");
+    let lineas_lote3 = info_lineas(busqueda_obj.zonas_lineas, "zona1", "lote3");
+    
+    
+
+    // INSERTAR EN EL DOM LAS LINEAS POR LOTES
+    switch (lote_value) {
+        case "lote1":
+            main_form.insertAdjacentElement("beforeend", lineas_lote1);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote2":
+            main_form.insertAdjacentElement("beforeend", lineas_lote2);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote3":
+            main_form.insertAdjacentElement("beforeend", lineas_lote3);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote4":
+            main_form.insertAdjacentElement("beforeend", lineas_lote4);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote5":
+            main_form.insertAdjacentElement("beforeend", lineas_lote5);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote6":
+            main_form.insertAdjacentElement("beforeend", lineas_lote6);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        
+        default:
+            break;
+    }
+}
+
+
+const lineas_zona2 = (main_form, button, lote_value, busqueda_obj) => {
+    remover_elementos_lineas(busqueda_obj.zonas_lineas);
+    let lineas_lote4 = info_lineas(busqueda_obj.zonas_lineas, "zona2", "lote4");
+    let lineas_lote5 = info_lineas(busqueda_obj.zonas_lineas, "zona2", "lote5");
+    let lineas_lote6 = info_lineas(busqueda_obj.zonas_lineas, "zona2", "lote6");
+
+    switch (lote_value) {
+        case "lote4":
+            main_form.insertAdjacentElement("beforeend", lineas_lote4);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote5":
+            main_form.insertAdjacentElement("beforeend", lineas_lote5);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote6":
+            main_form.insertAdjacentElement("beforeend", lineas_lote6);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        default:
+            break;
+    }
+}
+
+
+const lineas_zona3 = (main_form, button, lote_value, busqueda_obj) => {
+    remover_elementos_lineas(busqueda_obj.zonas_lineas);
+    let lineas_lote7 = info_lineas(busqueda_obj.zonas_lineas, "zona3", "lote7");
+    let lineas_lote8 = info_lineas(busqueda_obj.zonas_lineas, "zona3", "lote8");
+    let lineas_lote9 = info_lineas(busqueda_obj.zonas_lineas, "zona3", "lote9");
+
+    switch (lote_value) {
+        case "lote7":
+            main_form.insertAdjacentElement("beforeend", lineas_lote7);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote8":
+            main_form.insertAdjacentElement("beforeend", lineas_lote8);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        case "lote9":
+            main_form.insertAdjacentElement("beforeend", lineas_lote9);
+            main_form.insertAdjacentElement("beforeend", button);
+            break;
+        default:
+            break;
+    }
+}
+
+
 const select_lote = (main_form, zona_body, button, busqueda_obj) => {
+    let lotes = {zona1 : undefined, zona2 : undefined, zona3 : undefined};
     main_form.insertAdjacentElement("beforeend", zona_body);
     main_form.insertAdjacentElement("beforeend", button);
     zona_body.addEventListener("change", (e) => {
@@ -493,6 +202,10 @@ const select_lote = (main_form, zona_body, button, busqueda_obj) => {
         busqueda_obj.zonas_lotes.zona1 = createLoteBody();
         busqueda_obj.zonas_lotes.zona2 = createLoteBody("zona2");
         busqueda_obj.zonas_lotes.zona3 = createLoteBody("zona3");
+
+        lotes.zona1 = busqueda_obj.zonas_lotes.zona1;
+        lotes.zona2 = busqueda_obj.zonas_lotes.zona2;
+        lotes.zona3 = busqueda_obj.zonas_lotes.zona3;
         
         switch (e.target.value) {
             case "zona1":
@@ -510,56 +223,56 @@ const select_lote = (main_form, zona_body, button, busqueda_obj) => {
             default:
                 break;
         }
-        console.log(e.currentTarget);
+    })
+    return lotes
+};
+
+
+const select_linea = (main_form, zona_body, button, busqueda_obj) => {
+    main_form.insertAdjacentElement("beforeend", zona_body);
+    main_form.insertAdjacentElement("beforeend", button);
+    
+    zona_body.addEventListener("change", (e) => {
+        // REMOVER FORMULARIOS
+        eliminar_lotes(busqueda_obj.zonas_lotes);
+        remover_elementos_lineas(busqueda_obj.zonas_lineas);
+        // LOTES POR ZONA
+        busqueda_obj.zonas_lotes.zona1 = createLoteBody();
+        busqueda_obj.zonas_lotes.zona2 = createLoteBody("zona2");
+        busqueda_obj.zonas_lotes.zona3 = createLoteBody("zona3");
+        
+        switch (e.target.value) {
+            case "zona1":
+                // Inserta en el DOM los lotes de la zona1
+                main_form.insertAdjacentElement("beforeend", busqueda_obj.zonas_lotes.zona1);
+                main_form.insertAdjacentElement("beforeend", button);
+                
+                busqueda_obj.zonas_lotes.zona1.addEventListener("change", (el) => {
+                    lineas_zona1(main_form, button, el.target.value, busqueda_obj);
+                })
+                break;
+            case "zona2":
+                main_form.insertAdjacentElement("beforeend", busqueda_obj.zonas_lotes.zona2);
+                main_form.insertAdjacentElement("beforeend", button);
+
+                busqueda_obj.zonas_lotes.zona2.addEventListener("change", (e_z2) => {
+                    lineas_zona2(main_form, button, e_z2.target.value, busqueda_obj);
+                })
+                break;
+            case "zona3":
+                main_form.insertAdjacentElement("beforeend", busqueda_obj.zonas_lotes.zona3);
+                main_form.insertAdjacentElement("beforeend", button);
+                
+                busqueda_obj.zonas_lotes.zona3.addEventListener("change", (e_z3) => {
+                    lineas_zona3(main_form, button, e_z3.target.value, busqueda_obj);
+                })
+                break;
+            default:
+                break;
+        }
     })
 };
 
-let busqueda = {
-    zona_body : undefined,
-    lote_body : undefined,
-    linea_body : undefined,
-    zonas_lotes : {
-        zona1 : undefined,
-        zona2 : undefined,
-        zona3 : undefined
-    },
-    zonas_lineas : {
-        zona1 : {
-            lote1 : {
-                linea1 : undefined,
-                linea2 : undefined,
-                linea3 : undefined
-            },
-            lote2 : {
-                linea4 : undefined,
-                linea5 : undefined,
-                linea6 : undefined
-            },
-            lote3 : {
-                linea7 : undefined,
-                linea8 : undefined,
-                linea9 : undefined
-            }
-        },
-        zona2 : {
-            lote4 : {
-                linea10 : undefined,
-                linea11 : undefined,
-                linea12 : undefined
-            },
-            lote5 : {
-                linea13 : undefined,
-                linea14 : undefined,
-                linea15 : undefined
-            },
-            lote6 : {
-                linea16 : undefined,
-                linea17 : undefined,
-                linea18 : undefined
-            }
-        },
-    },
-};
 
 export function createBusquedaForm() {
     let form_element = document.querySelector(".visor_modulos");
@@ -584,109 +297,63 @@ export function createBusquedaForm() {
     
     let busqueda_menu = form_palma.firstChild.firstChild;
 
-    let linea_body;
-    let linea_lotes_body;
-
-    let lotes_body = { };
-    let lineas_body = { };
-
-
     busqueda_menu.addEventListener("change", () => {
         switch (busqueda_menu.value) {
             case "palma":
-                // REMOVER FORMULARIOS
-                eliminar_lotes(busqueda.zonas_lotes)
-
-                if (busqueda.lote_body != undefined) {
-                    busqueda.lote_body.remove();
-                }
-                if (busqueda.zona_body != undefined) {
-                    busqueda.zona_body.remove();
-                }
-
+                // REMOVER MENUS DE SELECCION
+                remover_elementos_body(busqueda); // Elimina del DOM, elementos tipo body
+                eliminar_lotes(busqueda.zonas_lotes); // Elimina el menú de Lotes por zonas
+                remover_elementos_lineas(busqueda.zonas_lineas); // Elimina lineas por lotes
+                
                 form_palma.insertAdjacentElement("beforeend", palma_body);
                 form_palma.insertAdjacentElement("beforeend", search_button);
                 break;
             case "zona":
-                // REMOVER FORMULARIOS
-                eliminar_lotes(busqueda.zonas_lotes);
-                if (busqueda.lote_body != undefined) {
-                    busqueda.lote_body.remove();
-                }
+                // REMOVER MENUS DE SELECCION
+                remover_elementos_body(busqueda); // Elimina del DOM, elementos tipo body
+                eliminar_lotes(busqueda.zonas_lotes); // Elimina el menú de Lotes por zonas
+                remover_elementos_lineas(busqueda.zonas_lineas); // Elimina lineas por lotes
+
                 palma_body.remove();
                 busqueda.zona_body = createZonaBody();
                 
                 form_palma.insertAdjacentElement("beforeend", busqueda.zona_body);
                 form_palma.insertAdjacentElement("beforeend", search_button);
                 break;
-                case "lote":
-                    console.log("Lote");
-                    eliminar_lotes(busqueda.zonas_lotes)
-                    palma_body.remove();
-                    if (busqueda.zona_body != undefined) {
-                        busqueda.zona_body.remove();
-                    }
-                    
-                    if (linea_body != undefined) {
-                        linea_body.remove();    
-                    }
-                    if (linea_lotes_body != undefined) {
-                        linea_lotes_body.remove();    
-                    }
-                    if (linea_body != undefined) {
-                        lineas_body.remove();
-                    }
-                    
-                    busqueda.lote_body = createZonaBody();
-                    // lineas_body.lote1 = createLoteBody();
-                    // lineas_body.lote2 = createLoteBody("lote2");
-                    // lineas_body.lote3 = createLoteBody("lote3");
-
-                    
-                    select_lote(form_palma, busqueda.lote_body, search_button, busqueda);
-                    console.log("LOTES Z1: ", busqueda.zonas_lotes.zona1);
-                    // CREA EL MENU DE SELECCION DE LOTES POR ZONA SELECCIONADA
-                    // createSelectSubmenu(form_palma, busqueda.zonas, busqueda., lotes_option_value, search_button);
-                    break;
-                    case "linea":
-                console.log("LINEA");
-                // REMOVER FORMULARIOS
+            case "lote":
+                // REMOVER MENUS DE SELECCION
+                remover_elementos_body(busqueda); // Elimina del DOM, elementos tipo body
                 eliminar_lotes(busqueda.zonas_lotes); // Elimina el menú de Lotes por zonas
-
-                if (linea_body != undefined) {
-                    linea_body.remove();    
-                }
-                if (linea_lotes_body != undefined) {
-                    linea_lotes_body.remove();    
-                }
-                if (linea_body != undefined) {
-                    lineas_body.remove();
-                }
+                remover_elementos_lineas(busqueda.zonas_lineas); // Elimina lineas por lotes
 
                 palma_body.remove();
+                
+                busqueda.lote_body = createZonaBody();
+                
+                select_lote(form_palma, busqueda.lote_body, search_button, busqueda);
+                break;
+            case "linea":
+                // REMOVER MENUS DE SELECCION
+                remover_elementos_body(busqueda); // Elimina del DOM, elementos tipo body
+                eliminar_lotes(busqueda.zonas_lotes); // Elimina el menú de Lotes por zonas
+                remover_elementos_lineas(busqueda.zonas_lineas); // Elimina lineas por lotes
 
-                // crearSubmenuLineas(form_palma, search_button, submenu_info);
-                linea_body = createZonaBody();
-                linea_lotes_body = createLoteBody();
-                lineas_body = createLineasBody();
+                palma_body.remove();
+                busqueda.linea_body = createZonaBody();
+                busqueda.zonas_lotes.zona1 = createLoteBody();
+                busqueda.zonas_lineas.zona1 = createLineasBody();
+                busqueda.zonas_lineas.zona1.lote1 = createLineasBody();
 
-                form_palma.insertAdjacentElement("beforeend", linea_body);
-                form_palma.insertAdjacentElement("beforeend", linea_lotes_body);
-                form_palma.insertAdjacentElement("beforeend", lineas_body);
-                form_palma.insertAdjacentElement("beforeend", search_button);
-
-                // createSelectSubmenu(form_palma, linea_body, lotes_body, lineas_option_value, search_button);
+                select_linea(form_palma, busqueda.linea_body, search_button, busqueda);
                 break;
             default:
-                console.log("DEFAULT");
                 break;
         }
     })
-
-    // form_palma.insertAdjacentElement("beforeend", search_button);
   
     return formBusquedaElement
 }
+
 
 export function createButtonBody() {
     let search_button = document.createElement("li");
@@ -699,8 +366,7 @@ export function createButtonBody() {
     search_button.insertAdjacentElement("beforeend", form_submit_button);
   
     return search_button
-  }
-
+}
 
 
 //------------------------ Arrastre DEL DIV --------------------------------------
